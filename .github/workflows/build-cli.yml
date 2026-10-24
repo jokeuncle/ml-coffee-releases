@@ -7,14 +7,13 @@ concurrency:
   group: mlcoffee-private-snapshot-build
   cancel-in-progress: false
 jobs:
-  build:
+  prepare:
     runs-on: ubuntu-24.04
-    timeout-minutes: 20
+    timeout-minutes: 5
     permissions:
-      contents: read
-      id-token: write
-      attestations: write
-      artifact-metadata: write
+      # GitHub draft releases require push access even for reading. This job
+      # only transfers ciphertext, never decrypts or executes private source.
+      contents: write
     steps:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
         with:
@@ -30,6 +29,31 @@ jobs:
             --pattern "$(jq -r .cipher_asset release/input.json)" \
             --pattern "$(jq -r .certificate_asset release/input.json)" \
             --dir "$RUNNER_TEMP/mlcoffee-build-input"
+      - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
+        with:
+          name: mlcoffee-sealed-build-input
+          path: ${{ runner.temp }}/mlcoffee-build-input/
+          retention-days: 1
+      - name: Remove the transfer copy
+        if: always()
+        run: python3 release/ci_build.py cleanup release/input.json "$RUNNER_TEMP/mlcoffee-build-input" "$RUNNER_TEMP/mlcoffee-build-source"
+  build:
+    needs: prepare
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: read
+      id-token: write
+      attestations: write
+      artifact-metadata: write
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@634f93cb2916e3fdff6788551b99b062d0335ce0
+        with:
+          name: mlcoffee-sealed-build-input
+          path: ${{ runner.temp }}/mlcoffee-build-input/
       - name: Decrypt and verify the complete source inventory
         id: unpack
         env:

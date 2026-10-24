@@ -38,8 +38,9 @@ def descriptor(path):
 
 def temp_child(path):
     root = pathlib.Path(os.environ["RUNNER_TEMP"]).resolve()
-    path = pathlib.Path(path).resolve()
-    if path.parent != root or not path.name.startswith("mlcoffee-") or path.is_symlink():
+    original = pathlib.Path(path)
+    path = original.resolve()
+    if path.parent != root or not path.name.startswith("mlcoffee-") or original.is_symlink():
         raise RuntimeError("owned_runner_temporary_path_required")
     return path
 
