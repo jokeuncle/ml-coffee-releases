@@ -1,0 +1,18 @@
+{
+  "version": "v1.0.0",
+  "repository": "jokeuncle/ml-coffee-releases",
+  "cipher_asset": "build-context-c050941f34514315.cms",
+  "certificate_asset": "build-context-c050941f34514315.crt.pem",
+  "cipher_sha256": "c050941f34514315cb79a5c13a661808abb58550a6833e4699e6f93c8f68ba3b",
+  "certificate_sha256": "8f644890993bd40ab371e9f10553bf386c6f5bb34334b5036123a60165bdc613",
+  "archive_sha256": "3d68cd632c1e788268d9b26c77bd3b1609c28ee3926adc81ded10283cc8aca93",
+  "source_manifest_sha256": "6ae37fad41a39dd60c6214bd306858929d26bf39c90eb0310742cdbffc3968ee",
+  "source_file_count": 164,
+  "source_tree_sha256": "7b2014b758f5914aff4a105e1eab348caae2cd14022b57ed5400fa90d7dbdb7a",
+  "private_source_base_commit": "7b410171b90184d6e0772037dcb1fb4b9e891ae7",
+  "verification_key_b64": "NZsiyI3FsjhJQK5l/2uHin+7Rb+HP0AFlkV6XfnItyY=",
+  "build_time": "2026-10-24T19:42:31.227709+00:00",
+  "skill_checksum": "43f7978abfc582900adb4ab236b9725dd5e45c89c99885dea9317b677bbf222c",
+  "go_version": "1.26.6",
+  "ephemeral_secret_name": "MLC_CONTEXT_KEY_C050941F34514315"
+}

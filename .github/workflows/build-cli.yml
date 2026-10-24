@@ -1,0 +1,62 @@
+name: Build private ML Coffee CLI snapshot
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: mlcoffee-private-snapshot-build
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: read
+      id-token: write
+      attestations: write
+      artifact-metadata: write
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Download only the sealed pinned source
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          umask 077
+          mkdir "$RUNNER_TEMP/mlcoffee-build-input"
+          gh release download "$(jq -r .version release/input.json)" --repo jokeuncle/ml-coffee-releases \
+            --pattern "$(jq -r .cipher_asset release/input.json)" \
+            --pattern "$(jq -r .certificate_asset release/input.json)" \
+            --dir "$RUNNER_TEMP/mlcoffee-build-input"
+      - name: Decrypt and verify the complete source inventory
+        id: unpack
+        env:
+          MLC_BUILD_DECRYPTION_KEY: ${{ secrets.MLC_CONTEXT_KEY_C050941F34514315 }}
+        run: python3 release/ci_build.py unpack release/input.json "$RUNNER_TEMP/mlcoffee-build-input" "$RUNNER_TEMP/mlcoffee-build-source"
+      - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e
+        with:
+          go-version: ${{ steps.unpack.outputs.go-version }}
+          cache: false
+      - name: Compile six binaries without release or customer credentials
+        run: python3 release/ci_build.py build release/input.json "$RUNNER_TEMP/mlcoffee-build-input" "$RUNNER_TEMP/mlcoffee-build-source" "$RUNNER_TEMP/mlcoffee-release-assets"
+      - name: Attest the binaries actually compiled by this workflow
+        id: provenance
+        uses: actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6
+        with:
+          subject-checksums: ${{ runner.temp }}/mlcoffee-release-assets/checksums-binaries.txt
+      - name: Include the public verification bundle
+        env:
+          MLC_ATTESTATION_PATH: ${{ steps.provenance.outputs.bundle-path }}
+        run: cp "$MLC_ATTESTATION_PATH" "$RUNNER_TEMP/mlcoffee-release-assets/mlc-binary-provenance.sigstore.json"
+      - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
+        if: always()
+        with:
+          name: mlcoffee-verified-cli-binaries
+          path: ${{ runner.temp }}/mlcoffee-release-assets/
+          retention-days: 1
+          if-no-files-found: ignore
+      - name: Remove plaintext source, decryption files and private logs
+        if: always()
+        run: python3 release/ci_build.py cleanup release/input.json "$RUNNER_TEMP/mlcoffee-build-input" "$RUNNER_TEMP/mlcoffee-build-source"
