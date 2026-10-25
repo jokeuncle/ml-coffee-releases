@@ -22,7 +22,7 @@ jobs:
         run: |
           set -euo pipefail
           mkdir "$RUNNER_TEMP/native-sealed"
-          gh release download v1.0.0 --repo jokeuncle/ml-coffee-releases --pattern "$(jq -r .cipher_asset native/input.json)" --pattern "$(jq -r .certificate_asset native/input.json)" --dir "$RUNNER_TEMP/native-sealed"
+          gh release download native-acceptance-inputs --repo jokeuncle/ml-coffee-releases --pattern "$(jq -r .cipher_asset native/input.json)" --pattern "$(jq -r .certificate_asset native/input.json)" --dir "$RUNNER_TEMP/native-sealed"
       - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
         with:
           name: native-sealed-input
@@ -45,7 +45,7 @@ jobs:
       - name: Decrypt exact test executable
         shell: pwsh
         env:
-          MLC_NATIVE_DECRYPTION_KEY: ${{ secrets.MLC_NATIVE_KEY_5E1C13C34DCE1A64 }}
+          MLC_NATIVE_DECRYPTION_KEY: ${{ secrets.MLC_NATIVE_KEY_A25FA89E97559917 }}
         run: ./native/run.ps1 -Phase unpack
       - name: Execute native unit boundary tests without decryption credentials
         shell: pwsh
