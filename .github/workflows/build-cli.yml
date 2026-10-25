@@ -57,7 +57,7 @@ jobs:
       - name: Decrypt and verify the complete source inventory
         id: unpack
         env:
-          MLC_BUILD_DECRYPTION_KEY: ${{ secrets.MLC_CONTEXT_KEY_3B43C792F554BCC4 }}
+          MLC_BUILD_DECRYPTION_KEY: ${{ secrets.MLC_CONTEXT_KEY_8F630B666DA9CB2E }}
         run: python3 release/ci_build.py unpack release/input.json "$RUNNER_TEMP/mlcoffee-build-input" "$RUNNER_TEMP/mlcoffee-build-source"
       - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e
         with:
