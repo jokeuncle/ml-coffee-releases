@@ -1,18 +1,18 @@
 {
-  "version": "v1.0.0",
+  "version": "v1.0.1",
   "repository": "jokeuncle/ml-coffee-releases",
-  "cipher_asset": "build-context-57e1d142a456bcb3.cms",
-  "certificate_asset": "build-context-57e1d142a456bcb3.crt.pem",
-  "cipher_sha256": "57e1d142a456bcb397aa4c8b2141f051d8d072ae0cd0a1dd2c8703e017693db0",
-  "certificate_sha256": "843d04b16c6e4747c7b064bbb7f2c01f20b0ae68ff4aff159ffcd8855e58496b",
-  "archive_sha256": "85432d8c9834bbc54e20bcdae908b535471d1d89aed845ed6279b7224ed9772d",
-  "source_manifest_sha256": "2ebf3bcb1b0c35d3093221a519368091e585b95d1b569de5e0ec9aba0307ad86",
+  "cipher_asset": "build-context-3b43c792f554bcc4.cms",
+  "certificate_asset": "build-context-3b43c792f554bcc4.crt.pem",
+  "cipher_sha256": "3b43c792f554bcc427b18b701680af0f608f21a5e788c964f36436bfd107b60e",
+  "certificate_sha256": "f931eea0f32968243a874a2c77caa07423009303cf514592e20969febef7f6c7",
+  "archive_sha256": "26afb62bf137a4ac7738a2fe0ad3d4a95f5cbdea9664ba36af2472aa2c6a1173",
+  "source_manifest_sha256": "8b96c2f7d1a8877345cb99f36e9df9a9263d2075d30b782d80a21a501133d347",
   "source_file_count": 175,
-  "source_tree_sha256": "e072cde6191b03f630209f34d01c8a4a2ae9c7e305e1779a8b938615692aab78",
+  "source_tree_sha256": "38f26eb2c1cc709a9a9a563028b595a7693342a0f67c47e43cb04d0d9bc61dfe",
   "private_source_base_commit": "664e923e0660d9fb8bf94bfd18514de21ed865d7",
   "verification_key_b64": "NZsiyI3FsjhJQK5l/2uHin+7Rb+HP0AFlkV6XfnItyY=",
-  "build_time": "2026-10-25T04:37:43.977554+00:00",
+  "build_time": "2026-10-25T10:03:59.921297+00:00",
   "skill_checksum": "43f7978abfc582900adb4ab236b9725dd5e45c89c99885dea9317b677bbf222c",
   "go_version": "1.26.6",
-  "ephemeral_secret_name": "MLC_CONTEXT_KEY_57E1D142A456BCB3"
+  "ephemeral_secret_name": "MLC_CONTEXT_KEY_3B43C792F554BCC4"
 }
