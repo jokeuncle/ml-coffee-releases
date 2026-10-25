@@ -1,31 +1,9 @@
 {
-  "cipher_asset": "native-tests-556780b4c8564e9b.cms",
-  "certificate_asset": "native-tests-556780b4c8564e9b.crt.pem",
-  "cipher_sha256": "9715978d80bdf0e0c904e4c8d06236b14e49e541e64f076ed01ce70fde96b9c6",
-  "certificate_sha256": "c0cf2864ae7e78a414bcaaced2f710927685219912710b3c67211f24925e5159",
-  "source_sha256": "5822075c0da93d18989f0c830d7207158624a4956209131f23de661ea4288240",
-  "test_filter": "^(TestUpdateLeaseDACL.*|TestUpdateLock.*|TestPending.*|TestFinalizePending.*|TestHumanSkillMaintenance.*|TestInstaller.*|TestSkillPayload.*|TestSkillExport.*|TestManagedSnapshot.*|TestFirstInstallSnapshot.*|TestBootstrapRefusesBusy.*)$",
-  "payload_kind": "cli_e2e_zip",
-  "payload_sha256": "d27795428147f133bac4c64fbaed3b5a37f31ccf7da16cb2a19a688789c1f261",
-  "package_files": {
-    "install.ps1": "56905e7566ada75dc9d400c01ed663844cc61c51ef50b1e38c40e57c9679c405",
-    "transport.py": "84449d6117e778f2f063608989fcb3a834c533942752cf5dc360e5f15c5378d2",
-    "native_driver.py": "a92a3c43b63fbcb60900b284f6b59eb006517489739c7d27ec7770c646d37aa7",
-    "v1.0.0.exe": "d965c490c2aff7a9cd77e528698382e3110c0e02927023ed10b35766108ff2e3",
-    "v1.0.0-compatible.json": "877fde3219db4cab0be300836d2c36c95a236cdedacdc97133903076015d51bd",
-    "v1.0.0-consent_required.json": "747d6a82af77a55b26042743d5fefed35ae7a0811a1f69a4f17286ffe01033dd",
-    "v1.0.0-blocked.json": "aeea524bfb1c23b540bd6cddc89dbda4173cee7f6414b393ec090408e8c5f832",
-    "v1.0.1.exe": "995ec9c26ec40c3b8c820023ef4612cbb6c08669e839709b393eef15ad48976b",
-    "v1.0.1-compatible.json": "91f85f6933e6089ba4dccdbd626e4170d7ca3b7f29721c606b3b4957f2433112",
-    "v1.0.1-consent_required.json": "d4872e275e2d214f5ac5b1f89d5dce817d98bda19678e31d650ec0a2c7844c45",
-    "v1.0.1-blocked.json": "c0d7d929fdb0e991f19c195f91445441ec79af123a99873e618f5c9346e32d9e",
-    "v1.0.2.exe": "6bff84f31459ad74c84e17cb77d113b8fcbb43a8480e59818b1ec9869e9d7f2b",
-    "v1.0.2-compatible.json": "931fd6adcfc4934f75d19b88a59c1605435ba02c556d7fd3b4cac31911d8721a",
-    "v1.0.2-consent_required.json": "6fcb1f84a760e6d92071566fd13fa657957ebcd64e23b723c6f423e28cb0e404",
-    "v1.0.2-blocked.json": "f4d542413d06c98ad3efc6d9aa9f89830f9a43180e870e1333a4235c0b2a1e9b",
-    "versions.json": "0d6c6fabb8410766c949eb34bc2553c2401eeb70fe95a04b0594d319e6913ca0",
-    "fixture-tls.pem": "76d5fdafe67122b705a24633d13c6d17741832153704a9e0c7936e47be7bfe61",
-    "fixture-ca.pem": "ec23443cc0f5806bb862160d515fa7be3c5312a5432c6da0561225ded076f73c",
-    "fixture-ca.cer": "4c636d549c73cbae1fae594929f1a4a1bfa49044d3c83a20030c6c651b26711a"
-  }
+  "cipher_asset": "native-tests-42dc5a51025713b6.cms",
+  "certificate_asset": "native-tests-42dc5a51025713b6.crt.pem",
+  "cipher_sha256": "c40587c2ac2a28c06ae93d94cbbafb4ff11a76c3ea0a21c273065f5a689391f0",
+  "certificate_sha256": "1d8817ca34a4accdf84b2d6d262ab26b76b445555025a99b5890fc0011e63f59",
+  "executable_sha256": "46e425f1f2f871a78c06ba40d73df60f0bd87e95a3d5eec9325631acf2fa502a",
+  "source_sha256": "d374b749fa4d5d2ea294f8e908caf872bf198088385b4497c2bf8fd4e0338650",
+  "test_filter": "^(TestUpdateLeaseDACL.*|TestUpdateLock.*|TestPending.*|TestFinalizePending.*|TestHumanSkillMaintenance.*|TestInstaller.*|TestSkillPayload.*|TestSkillExport.*|TestManagedSnapshot.*|TestFirstInstallSnapshot.*|TestBootstrapRefusesBusy.*)$"
 }
