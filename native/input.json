@@ -1,0 +1,9 @@
+{
+  "cipher_asset": "native-tests-4e8cd1ecbc05bdd7.cms",
+  "certificate_asset": "native-tests-4e8cd1ecbc05bdd7.crt.pem",
+  "cipher_sha256": "9e437e78667b024035833f031f8fa73b7c964c721984c840d2ef0e57ab846a80",
+  "certificate_sha256": "740e398f8bec0d6b6e6277a59078c903e71ccf13294f610350e8f0de5e292dfc",
+  "executable_sha256": "0c6b5ec683c447933124a7ce0d0798f81c7c520c9f7e903351ee104331885698",
+  "source_sha256": "c96d88a3e6c39b10e364fe09f8d08e91a229972b545fd4b537067045746c0f0f",
+  "test_filter": "^(TestUpdateLeaseDACL.*|TestUpdateLock.*|TestPending.*|TestFinalizePending.*|TestHumanSkillMaintenance.*|TestInstaller.*|TestSkillPayload.*|TestSkillExport.*|TestManagedSnapshot.*|TestFirstInstallSnapshot.*|TestBootstrapRefusesBusy.*)$"
+}

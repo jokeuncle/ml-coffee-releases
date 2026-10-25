@@ -1,0 +1,63 @@
+name: Native installer unit acceptance
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: mlcoffee-native-installer-tests
+  cancel-in-progress: false
+jobs:
+  prepare:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - name: Transfer ciphertext only
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir "$RUNNER_TEMP/native-sealed"
+          gh release download v1.0.0 --repo jokeuncle/ml-coffee-releases --pattern "$(jq -r .cipher_asset native/input.json)" --pattern "$(jq -r .certificate_asset native/input.json)" --dir "$RUNNER_TEMP/native-sealed"
+      - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
+        with:
+          name: native-sealed-input
+          path: ${{ runner.temp }}/native-sealed/
+          retention-days: 1
+  windows:
+    needs: prepare
+    runs-on: windows-2025
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@634f93cb2916e3fdff6788551b99b062d0335ce0
+        with:
+          name: native-sealed-input
+          path: ${{ runner.temp }}/native-sealed/
+      - name: Decrypt exact test executable
+        shell: pwsh
+        env:
+          MLC_NATIVE_DECRYPTION_KEY: ${{ secrets.MLC_NATIVE_KEY_4E8CD1ECBC05BDD7 }}
+        run: ./native/run.ps1 -Phase unpack
+      - name: Execute native unit boundary tests without decryption credentials
+        shell: pwsh
+        run: ./native/run.ps1 -Phase test
+      - name: Seal private diagnostics and remove plaintext
+        if: always()
+        shell: pwsh
+        run: ./native/run.ps1 -Phase cleanup
+      - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f
+        if: always()
+        with:
+          name: native-installer-evidence
+          path: ${{ runner.temp }}/native-evidence/
+          retention-days: 1
+          if-no-files-found: error
