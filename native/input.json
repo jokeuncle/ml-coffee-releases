@@ -1,9 +1,31 @@
 {
-  "cipher_asset": "native-tests-42dc5a51025713b6.cms",
-  "certificate_asset": "native-tests-42dc5a51025713b6.crt.pem",
-  "cipher_sha256": "c40587c2ac2a28c06ae93d94cbbafb4ff11a76c3ea0a21c273065f5a689391f0",
-  "certificate_sha256": "1d8817ca34a4accdf84b2d6d262ab26b76b445555025a99b5890fc0011e63f59",
-  "executable_sha256": "46e425f1f2f871a78c06ba40d73df60f0bd87e95a3d5eec9325631acf2fa502a",
-  "source_sha256": "d374b749fa4d5d2ea294f8e908caf872bf198088385b4497c2bf8fd4e0338650",
-  "test_filter": "^(TestUpdateLeaseDACL.*|TestUpdateLock.*|TestPending.*|TestFinalizePending.*|TestHumanSkillMaintenance.*|TestInstaller.*|TestSkillPayload.*|TestSkillExport.*|TestManagedSnapshot.*|TestFirstInstallSnapshot.*|TestBootstrapRefusesBusy.*)$"
+  "cipher_asset": "native-tests-3dc4911498c25489.cms",
+  "certificate_asset": "native-tests-3dc4911498c25489.crt.pem",
+  "cipher_sha256": "99bb3e3f37cda478a87910c383e39d24fd73f5d02ef4d4ecda62665821d2ef75",
+  "certificate_sha256": "a4e1dded92ed1f4b8c665b5b8f27661df0961968d9fa1cc0a3c896c54026daf9",
+  "source_sha256": "db62b8a307770b38847e32824e607062ebe30b906bf240118b8a0e5d3a30ff09",
+  "test_filter": "^(TestUpdateLeaseDACL.*|TestUpdateLock.*|TestPending.*|TestFinalizePending.*|TestHumanSkillMaintenance.*|TestInstaller.*|TestSkillPayload.*|TestSkillExport.*|TestManagedSnapshot.*|TestManagedPairRepair.*|TestDoctorRejectsSelfConsistent.*|TestFirstInstallSnapshot.*|TestBootstrapRefusesBusy.*)$",
+  "payload_kind": "cli_e2e_zip",
+  "payload_sha256": "5965793bcad6986a0869bdf2760a689c6d071e9262a2e2e6474e90a067ad6beb",
+  "package_files": {
+    "install.ps1": "56905e7566ada75dc9d400c01ed663844cc61c51ef50b1e38c40e57c9679c405",
+    "transport.py": "84449d6117e778f2f063608989fcb3a834c533942752cf5dc360e5f15c5378d2",
+    "native_driver.py": "0a8a26bf878132dd8f0655268e17ac216f181965ad823c5f85599c2705721192",
+    "v1.0.0.exe": "fae737b67ae9030be8af0015b39630375f226bc00278237eaf0bd9fc3fe9d1c1",
+    "v1.0.0-compatible.json": "4e68c7f5603d3b00fbf88a43c4f3e11e5cc4482dbe70ac74fae10a538d5c2942",
+    "v1.0.0-consent_required.json": "f6100eebdad3a8c7198f0cb93b011d5d789842c823c80517faf0c3acb4310b05",
+    "v1.0.0-blocked.json": "1b3afeb78c3ed6ce36a25da331a24ce36c5978671c1c069f7f0e369f2d994b3c",
+    "v1.0.1.exe": "add06da5d732437f498eb5035587774f356e8bcae9816c2b7a94ccb5fa2340ff",
+    "v1.0.1-compatible.json": "9c340a95fb69da7fa27677f3a8adec6e617db0cbe36a3ea7466ebfb9662586ef",
+    "v1.0.1-consent_required.json": "e1d06e0be07114e013f74e258065933fba705a72751d50bd0071dddb7a484bc1",
+    "v1.0.1-blocked.json": "a6af1c86ded51d41d40cdbddef2d281fd3a916e3fd629f36c3e8486d919bc1c3",
+    "v1.0.2.exe": "cd7db5e1514380a204ca187f783e11ae5e99427b9eb8d23d88c7e164dec2c2e3",
+    "v1.0.2-compatible.json": "cc67d3feea9b0fb1ff8d42e56a117189ece87d0837588f04bbe67e76fcdb7b1d",
+    "v1.0.2-consent_required.json": "1312c38c736189df2ccfbb2a4c075adfa49a2540c0c5049a135836ee2b8d5409",
+    "v1.0.2-blocked.json": "4cde4f0a0168edc96fa1dc207278dfa75dfc9690e720e14412ee802787f0a80b",
+    "versions.json": "7f102a4fc91b6288f05aaffd4e9f4b1dc5d1c05ed72f4c5d1572474bc55f4a32",
+    "fixture-tls.pem": "0cda6c1777afaa02badee166831267be77cdb96ee57e383028d759fddc96c88c",
+    "fixture-ca.pem": "9e7ab9805a86289668f9b6f65dd83985a0f35aa8a51befd646b909ea82a667f8",
+    "fixture-ca.cer": "5116720f324b948cac47a2e3436ac4f7878edf40319d59688f557074ed34982d"
+  }
 }
