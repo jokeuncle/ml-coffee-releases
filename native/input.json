@@ -1,16 +1,16 @@
 {
-  "cipher_asset": "native-tests-d2f7df30ffe198c8.cms",
-  "certificate_asset": "native-tests-d2f7df30ffe198c8.crt.pem",
-  "cipher_sha256": "255940ba105a70a7edd545c485d29cb9e7a05314252d22e0d8dbf38a6787d5f1",
-  "certificate_sha256": "44ae5ebb36a6002666efa439e22fb7cd731d89589772367e69a0473ce9a59251",
+  "cipher_asset": "native-tests-831afeaac34c269e.cms",
+  "certificate_asset": "native-tests-831afeaac34c269e.crt.pem",
+  "cipher_sha256": "75b768cb13a067f6e7b607d463c99ea8dff42429c4bc55c35829e6f3ab21be3d",
+  "certificate_sha256": "b88e1e33a17f631c3520cba7493e10ff41b0e9caa6d0959fc08c995f6b4fb584",
   "source_sha256": "d0ab9684db1a8b31b0c51652621f5029e20222ec039d52c7c38e7608b23b3a75",
   "test_filter": "^(TestUpdateLeaseDACL.*|TestUpdateLock.*|TestPending.*|TestFinalizePending.*|TestHumanSkillMaintenance.*|TestInstaller.*|TestSkillPayload.*|TestSkillExport.*|TestManagedSnapshot.*|TestFirstInstallSnapshot.*|TestBootstrapRefusesBusy.*)$",
   "payload_kind": "cli_e2e_zip",
-  "payload_sha256": "7dd48b186523de6c224136645d8e2c63e5b217825df6ef7cc46cc827340fdd00",
+  "payload_sha256": "2a3232aed9b67d0e8f63c87c368b86fc8b83d83211fe810c9864c5d018dfbb4d",
   "package_files": {
     "install.ps1": "56905e7566ada75dc9d400c01ed663844cc61c51ef50b1e38c40e57c9679c405",
     "transport.py": "84449d6117e778f2f063608989fcb3a834c533942752cf5dc360e5f15c5378d2",
-    "native_driver.py": "396d7b5a75c5212113d59119151191c384c30aebab27b92da1c380f8dcffeab5",
+    "native_driver.py": "8d16cc82b99119552c5e25197c20d06df8e1c74c444a1ef286cce8adc148372e",
     "v1.0.0.exe": "4efc8ed420b06a7bb280053e39e2d9bd0f58809f8146370dd87cc7985eb2416a",
     "v1.0.0-compatible.json": "dba0ad6f65b69c650e3a6bd92289e7904a84566a0b5a4fe6196d678833e11ddb",
     "v1.0.0-consent_required.json": "b76707fce49b1d341f7975551293e2d4bafd512139186f0b6569e46c5f96f0ed",
@@ -25,6 +25,7 @@
     "v1.0.2-blocked.json": "40bb7dcfd2bf41684c09e22f44b956d2fe53f00e82388261a29f028f41c25c63",
     "versions.json": "b98fb4930f9f56a3906672b0951e7f5a2a0f5dfc5a11aeca6ffa130a6d0a113d",
     "fixture-tls.pem": "d5305fb013d47a53799db6f8a06dace4ec0ac318b097e55841551ceb8aa0aa06",
-    "fixture-ca.pem": "766fe99ed6011609299bb7ac30046569fe8bb8cdc3704192322c7541c64e1f00"
+    "fixture-ca.pem": "766fe99ed6011609299bb7ac30046569fe8bb8cdc3704192322c7541c64e1f00",
+    "fixture-ca.cer": "72fc52570bf5f61df6db7642eaba10be880dc31db658d3c7493a29d50bc1ee4d"
   }
 }
