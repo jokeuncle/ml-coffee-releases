@@ -45,7 +45,7 @@ jobs:
       - name: Decrypt exact test executable
         shell: pwsh
         env:
-          MLC_NATIVE_DECRYPTION_KEY: ${{ secrets.MLC_NATIVE_KEY_515316A96F4A54A4 }}
+          MLC_NATIVE_DECRYPTION_KEY: ${{ secrets.MLC_NATIVE_KEY_5E1C13C34DCE1A64 }}
         run: ./native/run.ps1 -Phase unpack
       - name: Execute native unit boundary tests without decryption credentials
         shell: pwsh
